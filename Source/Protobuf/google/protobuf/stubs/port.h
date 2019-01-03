@@ -97,7 +97,11 @@
 #elif defined(__APPLE__)
 #include <libkern/OSByteOrder.h>
 #elif defined(__GLIBC__) || defined(__CYGWIN__)
-#include <byteswap.h>  // IWYU pragma: export
+//#include <byteswap.h>  // IWYU pragma: export
+#include <bits/byteswap.h>
+#define bswap_16(x) __bswap_16 (x)
+#define bswap_32(x) __bswap_32 (x)
+#define bswap_64(x) __bswap_64 (x)
 #endif
 
 #define PROTOBUF_RUNTIME_DEPRECATED(message)

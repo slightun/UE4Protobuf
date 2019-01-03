@@ -12,8 +12,10 @@ A protobuf source integration for UE4.
 	* `MAC`
 	* `iOS`
 
-* 未测试
+* 已测试通过
 	* `Linux`
+	* 参照(http://www.cnblogs.com/sevenyuan/p/8670537.html)修改port.h第100行代码编译错误问题
+	* 修改Build.cs文件
 
 ## 如何使用 ##
 
