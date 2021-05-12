@@ -28,6 +28,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
@@ -36,23 +39,50 @@ namespace protobuf_Test_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[1];
+  static const ::google::protobuf::internal::ParseTable schema[2];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
 };
 void AddDescriptors();
+void InitDefaultsSearchRequest_AttrListEntry_DoNotUseImpl();
+void InitDefaultsSearchRequest_AttrListEntry_DoNotUse();
 void InitDefaultsSearchRequestImpl();
 void InitDefaultsSearchRequest();
 inline void InitDefaults() {
+  InitDefaultsSearchRequest_AttrListEntry_DoNotUse();
   InitDefaultsSearchRequest();
 }
 }  // namespace protobuf_Test_2eproto
 class SearchRequest;
 class SearchRequestDefaultTypeInternal;
 extern SearchRequestDefaultTypeInternal _SearchRequest_default_instance_;
+class SearchRequest_AttrListEntry_DoNotUse;
+class SearchRequest_AttrListEntry_DoNotUseDefaultTypeInternal;
+extern SearchRequest_AttrListEntry_DoNotUseDefaultTypeInternal _SearchRequest_AttrListEntry_DoNotUse_default_instance_;
 
 // ===================================================================
+
+class SearchRequest_AttrListEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<SearchRequest_AttrListEntry_DoNotUse, 
+    ::google::protobuf::int32, ::google::protobuf::int32,
+    ::google::protobuf::internal::WireFormatLite::TYPE_INT32,
+    ::google::protobuf::internal::WireFormatLite::TYPE_INT32,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<SearchRequest_AttrListEntry_DoNotUse, 
+    ::google::protobuf::int32, ::google::protobuf::int32,
+    ::google::protobuf::internal::WireFormatLite::TYPE_INT32,
+    ::google::protobuf::internal::WireFormatLite::TYPE_INT32,
+    0 > SuperType;
+  SearchRequest_AttrListEntry_DoNotUse();
+  SearchRequest_AttrListEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const SearchRequest_AttrListEntry_DoNotUse& other);
+  static const SearchRequest_AttrListEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const SearchRequest_AttrListEntry_DoNotUse*>(&_SearchRequest_AttrListEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) PROTOBUF_FINAL;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
 
 class SearchRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:SearchRequest) */ {
  public:
@@ -89,7 +119,7 @@ class SearchRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_SearchRequest_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(SearchRequest* other);
   friend void swap(SearchRequest& a, SearchRequest& b) {
@@ -134,7 +164,17 @@ class SearchRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
+
+  // map<int32, int32> attr_list = 4;
+  int attr_list_size() const;
+  void clear_attr_list();
+  static const int kAttrListFieldNumber = 4;
+  const ::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >&
+      attr_list() const;
+  ::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >*
+      mutable_attr_list();
 
   // string query = 1;
   void clear_query();
@@ -166,6 +206,12 @@ class SearchRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      SearchRequest_AttrListEntry_DoNotUse,
+      ::google::protobuf::int32, ::google::protobuf::int32,
+      ::google::protobuf::internal::WireFormatLite::TYPE_INT32,
+      ::google::protobuf::internal::WireFormatLite::TYPE_INT32,
+      0 > attr_list_;
   ::google::protobuf::internal::ArenaStringPtr query_;
   ::google::protobuf::int32 page_number_;
   ::google::protobuf::int32 result_per_page_;
@@ -182,6 +228,8 @@ class SearchRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // SearchRequest
 
 // string query = 1;
@@ -265,9 +313,29 @@ inline void SearchRequest::set_result_per_page(::google::protobuf::int32 value) 
   // @@protoc_insertion_point(field_set:SearchRequest.result_per_page)
 }
 
+// map<int32, int32> attr_list = 4;
+inline int SearchRequest::attr_list_size() const {
+  return attr_list_.size();
+}
+inline void SearchRequest::clear_attr_list() {
+  attr_list_.Clear();
+}
+inline const ::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >&
+SearchRequest::attr_list() const {
+  // @@protoc_insertion_point(field_map:SearchRequest.attr_list)
+  return attr_list_.GetMap();
+}
+inline ::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >*
+SearchRequest::mutable_attr_list() {
+  // @@protoc_insertion_point(field_mutable_map:SearchRequest.attr_list)
+  return attr_list_.MutableMap();
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

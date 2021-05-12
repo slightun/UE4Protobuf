@@ -25,12 +25,37 @@
 #pragma warning(disable:4125)
 #endif // _MSC_VER
 //end custom modify
+class SearchRequest_AttrListEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<SearchRequest_AttrListEntry_DoNotUse>
+      _instance;
+} _SearchRequest_AttrListEntry_DoNotUse_default_instance_;
 class SearchRequestDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<SearchRequest>
       _instance;
 } _SearchRequest_default_instance_;
 namespace protobuf_Test_2eproto {
+void InitDefaultsSearchRequest_AttrListEntry_DoNotUseImpl() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
+#else
+  ::google::protobuf::internal::InitProtobufDefaults();
+#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  {
+    void* ptr = &::_SearchRequest_AttrListEntry_DoNotUse_default_instance_;
+    new (ptr) ::SearchRequest_AttrListEntry_DoNotUse();
+  }
+  ::SearchRequest_AttrListEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+void InitDefaultsSearchRequest_AttrListEntry_DoNotUse() {
+  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
+  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsSearchRequest_AttrListEntry_DoNotUseImpl);
+}
+
 void InitDefaultsSearchRequestImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -39,6 +64,7 @@ void InitDefaultsSearchRequestImpl() {
 #else
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_Test_2eproto::InitDefaultsSearchRequest_AttrListEntry_DoNotUse();
   {
     void* ptr = &::_SearchRequest_default_instance_;
     new (ptr) ::SearchRequest();
@@ -52,9 +78,18 @@ void InitDefaultsSearchRequest() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsSearchRequestImpl);
 }
 
-::google::protobuf::Metadata file_level_metadata[1];
+::google::protobuf::Metadata file_level_metadata[2];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::SearchRequest_AttrListEntry_DoNotUse, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::SearchRequest_AttrListEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::SearchRequest_AttrListEntry_DoNotUse, key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::SearchRequest_AttrListEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::SearchRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -63,12 +98,15 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::SearchRequest, query_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::SearchRequest, page_number_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::SearchRequest, result_per_page_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::SearchRequest, attr_list_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::SearchRequest)},
+  { 0, 7, sizeof(::SearchRequest_AttrListEntry_DoNotUse)},
+  { 9, -1, sizeof(::SearchRequest)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_SearchRequest_AttrListEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::_SearchRequest_default_instance_),
 };
 
@@ -88,18 +126,20 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 2);
 }
 
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\nTest.proto\"L\n\rSearchRequest\022\r\n\005query\030\001"
-      " \001(\t\022\023\n\013page_number\030\002 \001(\005\022\027\n\017result_per_"
-      "page\030\003 \001(\005b\006proto3"
+      "\n\nTest.proto\"\256\001\n\rSearchRequest\022\r\n\005query\030"
+      "\001 \001(\t\022\023\n\013page_number\030\002 \001(\005\022\027\n\017result_per"
+      "_page\030\003 \001(\005\022/\n\tattr_list\030\004 \003(\0132\034.SearchR"
+      "equest.AttrListEntry\032/\n\rAttrListEntry\022\013\n"
+      "\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\005:\0028\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 98);
+      descriptor, 197);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "Test.proto", &protobuf_RegisterTypes);
 }
@@ -118,12 +158,30 @@ struct StaticDescriptorInitializer {
 
 // ===================================================================
 
+SearchRequest_AttrListEntry_DoNotUse::SearchRequest_AttrListEntry_DoNotUse() {}
+SearchRequest_AttrListEntry_DoNotUse::SearchRequest_AttrListEntry_DoNotUse(::google::protobuf::Arena* arena) : SuperType(arena) {}
+void SearchRequest_AttrListEntry_DoNotUse::MergeFrom(const SearchRequest_AttrListEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::google::protobuf::Metadata SearchRequest_AttrListEntry_DoNotUse::GetMetadata() const {
+  ::protobuf_Test_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_Test_2eproto::file_level_metadata[0];
+}
+void SearchRequest_AttrListEntry_DoNotUse::MergeFrom(
+    const ::google::protobuf::Message& other) {
+  ::google::protobuf::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
 void SearchRequest::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SearchRequest::kQueryFieldNumber;
 const int SearchRequest::kPageNumberFieldNumber;
 const int SearchRequest::kResultPerPageFieldNumber;
+const int SearchRequest::kAttrListFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SearchRequest::SearchRequest()
@@ -139,6 +197,7 @@ SearchRequest::SearchRequest(const SearchRequest& from)
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  attr_list_.MergeFrom(from.attr_list_);
   query_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.query().size() > 0) {
     query_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.query_);
@@ -195,6 +254,7 @@ void SearchRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  attr_list_.Clear();
   query_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&page_number_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&result_per_page_) -
@@ -256,6 +316,25 @@ bool SearchRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // map<int32, int32> attr_list = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          SearchRequest_AttrListEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
+              SearchRequest_AttrListEntry_DoNotUse,
+              ::google::protobuf::int32, ::google::protobuf::int32,
+              ::google::protobuf::internal::WireFormatLite::TYPE_INT32,
+              ::google::protobuf::internal::WireFormatLite::TYPE_INT32,
+              0 >,
+            ::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 > > parser(&attr_list_);
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+              input, &parser));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -302,6 +381,45 @@ void SearchRequest::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->result_per_page(), output);
   }
 
+  // map<int32, int32> attr_list = 4;
+  if (!this->attr_list().empty()) {
+    typedef ::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >::const_pointer
+        ConstPtr;
+    typedef ::google::protobuf::internal::SortItem< ::google::protobuf::int32, ConstPtr > SortItem;
+    typedef ::google::protobuf::internal::CompareByFirstField<SortItem> Less;
+
+    if (output->IsSerializationDeterministic() &&
+        this->attr_list().size() > 1) {
+      ::google::protobuf::scoped_array<SortItem> items(
+          new SortItem[this->attr_list().size()]);
+      typedef ::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >::size_type size_type;
+      size_type n = 0;
+      for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >::const_iterator
+          it = this->attr_list().begin();
+          it != this->attr_list().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      ::google::protobuf::scoped_ptr<SearchRequest_AttrListEntry_DoNotUse> entry;
+      for (size_type i = 0; i < n; i++) {
+        entry.reset(attr_list_.NewEntryWrapper(
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+            4, *entry, output);
+      }
+    } else {
+      ::google::protobuf::scoped_ptr<SearchRequest_AttrListEntry_DoNotUse> entry;
+      for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >::const_iterator
+          it = this->attr_list().begin();
+          it != this->attr_list().end(); ++it) {
+        entry.reset(attr_list_.NewEntryWrapper(
+            it->first, it->second));
+        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+            4, *entry, output);
+      }
+    }
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -337,6 +455,49 @@ void SearchRequest::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->result_per_page(), target);
   }
 
+  // map<int32, int32> attr_list = 4;
+  if (!this->attr_list().empty()) {
+    typedef ::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >::const_pointer
+        ConstPtr;
+    typedef ::google::protobuf::internal::SortItem< ::google::protobuf::int32, ConstPtr > SortItem;
+    typedef ::google::protobuf::internal::CompareByFirstField<SortItem> Less;
+
+    if (deterministic &&
+        this->attr_list().size() > 1) {
+      ::google::protobuf::scoped_array<SortItem> items(
+          new SortItem[this->attr_list().size()]);
+      typedef ::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >::size_type size_type;
+      size_type n = 0;
+      for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >::const_iterator
+          it = this->attr_list().begin();
+          it != this->attr_list().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      ::google::protobuf::scoped_ptr<SearchRequest_AttrListEntry_DoNotUse> entry;
+      for (size_type i = 0; i < n; i++) {
+        entry.reset(attr_list_.NewEntryWrapper(
+            items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second));
+        target = ::google::protobuf::internal::WireFormatLite::
+                   InternalWriteMessageNoVirtualToArray(
+                       4, *entry, deterministic, target);
+;
+      }
+    } else {
+      ::google::protobuf::scoped_ptr<SearchRequest_AttrListEntry_DoNotUse> entry;
+      for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >::const_iterator
+          it = this->attr_list().begin();
+          it != this->attr_list().end(); ++it) {
+        entry.reset(attr_list_.NewEntryWrapper(
+            it->first, it->second));
+        target = ::google::protobuf::internal::WireFormatLite::
+                   InternalWriteMessageNoVirtualToArray(
+                       4, *entry, deterministic, target);
+;
+      }
+    }
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -354,6 +515,20 @@ size_t SearchRequest::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
+  // map<int32, int32> attr_list = 4;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->attr_list_size());
+  {
+    ::google::protobuf::scoped_ptr<SearchRequest_AttrListEntry_DoNotUse> entry;
+    for (::google::protobuf::Map< ::google::protobuf::int32, ::google::protobuf::int32 >::const_iterator
+        it = this->attr_list().begin();
+        it != this->attr_list().end(); ++it) {
+      entry.reset(attr_list_.NewEntryWrapper(it->first, it->second));
+      total_size += ::google::protobuf::internal::WireFormatLite::
+          MessageSizeNoVirtual(*entry);
+    }
+  }
+
   // string query = 1;
   if (this->query().size() > 0) {
     total_size += 1 +
@@ -404,6 +579,7 @@ void SearchRequest::MergeFrom(const SearchRequest& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  attr_list_.MergeFrom(from.attr_list_);
   if (from.query().size() > 0) {
 
     query_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.query_);
@@ -440,6 +616,7 @@ void SearchRequest::Swap(SearchRequest* other) {
 }
 void SearchRequest::InternalSwap(SearchRequest* other) {
   using std::swap;
+  attr_list_.Swap(&other->attr_list_);
   query_.Swap(&other->query_);
   swap(page_number_, other->page_number_);
   swap(result_per_page_, other->result_per_page_);

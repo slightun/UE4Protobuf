@@ -4,6 +4,9 @@ A protobuf source integration for UE4.
 
 直接在项目中集成 `libprotobuf` 的源码，方便使用
 
+## Fork 后扩展修改 ##
+	* 增加 protobuf map 结构的支持
+
 ## 测试平台 ##
 
 * 已测试通过
